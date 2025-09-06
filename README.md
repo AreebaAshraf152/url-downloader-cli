@@ -1,22 +1,42 @@
-# Python File Downloader CLI Tool
+# Python Command-Line File Downloader  
 
-A simple **Command Line Interface (CLI) tool** written in Python to download files from a given URL.
+A simple Python script that downloads files from the internet using a URL.  
+It supports custom filenames, adds headers to avoid errors, and automatically creates a `DownloadedFiles` folder to store files.  
 
----
+## 🚀 Features  
+- Download any file from a given URL  
+- Optional custom filename (otherwise extracted from URL)  
+- Creates a `DownloadedFiles` folder automatically  
+- Adds headers to prevent request blocking (403 errors)  
+- Opens the folder automatically after download (Windows only)  
+- Efficient chunked downloading to handle large files  
 
-## 🚀 Features
-- Download files directly from a URL.
-- Optionally specify a custom output filename (`-o` or `--output`).
-- Streams file in chunks for efficient downloading (supports large files).
-- User-friendly command-line interface built with `argparse`.
+## 🛠️ Technologies Used  
+- **Python 3**  
+- **os** → File and folder management  
+- **requests** → Handling HTTP requests  
+- **argparse** → Command-line interface  
 
----
+## 📂 Project Structure  
+├── downloader.py      # Main script  
+├── DownloadedFiles/   # Folder where files will be saved (auto-created)  
 
-## 💻 Usage
+
+## ⚡ Usage  
 
 ```bash
-# Basic usage
-python downloader.py "https://example.com/file.pdf"
+# 1. Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 
-# With custom output filename
-python downloader.py "https://example.com/file.pdf" -o myfile.pdf
+# 2. Install requirements
+pip install requests
+
+# 3. Run the script with a URL
+python downloader.py <URL> -o <optional_filename>
+
+# Example
+python downloader.py https://example.com/sample.jpg -o myimage.jpg
+
+
+
